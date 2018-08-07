@@ -11,6 +11,48 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.7/journal/bootstrap.min.css" />
     <!-- bootstrap: cosmo theme -->
     <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" /> -->
+    <script>
+            $(function(){
+                    // Progessbar 
+                    // Basic example
+                    $('.example1').click(function(){
+        
+                        $.preloader.start();
+        
+                        setTimeout(function(){
+                            src : 'sprites3.png'
+                            $.preloader.stop();
+                        }, 7000);
+        
+                    });
+        
+                    // Advanced example
+                    $('.example2').click(function(){
+        
+                        $.preloader.start({
+                            modal: true,
+                            src : 'sprites3.png'
+                        });
+        
+                        setTimeout(function(){
+                            $.preloader.stop();
+                        }, 7000);
+        
+                    });
+        
+                    // With button example
+                    $('.example3').click(function(){
+        
+                        var e = $('<div/>').css({'margin-left': '10px', 'display': 'inline-block', 'vertical-align': 'middle'}).insertAfter(this).preloader({src:'sprites3.png'});
+        
+                        setTimeout(function(){
+                            e.preloader('stop');
+                        }, 8000);
+        
+                    });
+                });
+        </script>
+        
     <style>
         html {
             position: relative;

@@ -3,16 +3,23 @@
 {% load static %}
 
 {% block content %}
+
+
+
 <h1>AUTO MUSIC dictation Converter</h1>
   <form method="post" enctype="multipart/form-data">
+    <div class="form-group">
     {% csrf_token %}
-    <input type="file" name="myfile">
-    <button type="submit">Upload</button>
+    <label for="file">Upload file</label>
+    <input type="file" class="form-control" id="file"  name="myfile">
+    <small id="emailHelp" class="form-text text-muted">원하시는 파일을 선택해주세요.</small>
+    </div>
+    <button class="btn btn-primary ld-ext-right" onclick="location.href='http://deathcrow.altervista.org/gd/hangman/easy/'" type="submit">Convert</button> 
+
   </form>
 
   {% if uploaded_file_url %}
     <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
   {% endif %}
 
-  <p><a href="{% url 'home' %}">Return to home</a></p>
 {% endblock %}
