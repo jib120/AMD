@@ -1,5 +1,6 @@
 Auto Music Dictation
 
+installation
 ```bash
 python manage.py migrate
 ```
